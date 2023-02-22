@@ -62,7 +62,7 @@ For this study, we used SQL to clean the data, specifically BigQuery by Google. 
     DROP COLUMN
      TotalSleepRecords
 ```
-- Counted the number of users, records and dates from the daily activity table using this query: 
+Counted the number of users, records and dates from the daily activity table using this query: 
 ```
 SELECT 
  COUNT(DISTINCT Id) AS Number_of_users,
@@ -76,6 +76,111 @@ Results:
 - Number_of_records = 940
 - Number_of_dates = 31
 
+- Did the same for the sleep day table with this query: 
+```
+SELECT 
+  COUNT(DISTINCT Id) AS Number_of_users,
+  COUNT(*) AS Number_of_records,
+  COUNT(DISTINCT SleepDay) AS Number_of_dates
+FROM
+  `bellabeat-case-study-2-376122.fitbit_data.sleep_day`
+```
+Results:
+- Number_of_users = 24
+- Number_of_records = 413
+- Number_of_dates = 31
+- [1000steps.org](https://www.10000steps.org.au) states that a sedentary lifestyle is less than 5,000 steps per day, low activity is between 5000 and 7499, somewhat active is between 7500 and 9999 steps and active is above 10000.
+- In order to reflect this, user activity will be classified into these ranges by creating a new column called ActivityLevel.
+- I will also add the day of the week to analyze the time more extensively.
+- This is the query used to create the column ActivityLevel:
+```
+ALTER TABLE
+ `bellabeat-case-study-2-376122.fitbit_data.daily_activity`
+ADD COLUMN
+ ActivityLevel String;
+```
+- The table was then updated to pull the amount of steps that that entry had, and categorized it into the respective categories using this query:
+```
+UPDATE `bellabeat-case-study-2-376122.fitbit_data.daily_activity` 
+SET ActivityLevel = 
+CASE 
+ WHEN Totalsteps < 5000 THEN 'Sedentary' 
+ WHEN Totalsteps BETWEEN 5000 AND 7499 THEN 'Somewhat Active' 
+ WHEN Totalsteps BETWEEN 7500 AND 9999 THEN 'Active' 
+ ELSE 'Very Active' 
+END
+WHERE 1 = 1
+```
+The column DayofWeek was added to show the day of the week that pertains to the date in the ActivityDate column using this query:
+```
+ALTER TABLE
+ `bellabeat-case-study-2-376122.fitbit_data.daily_activity`
+ADD COLUMN
+ DayofWeek String;
+```
+The table was then updated to fill in the column with the pertaining days using this query:
+```
+UPDATE `bellabeat-case-study-2-376122.fitbit_data.daily_activity`
+SET DayofWeek = 
+    CASE
+      WHEN FORMAT_DATE('%w', ActivityDate) = '0' THEN 'Sunday'
+      WHEN FORMAT_DATE('%w', ActivityDate) = '1' THEN 'Monday'
+      WHEN FORMAT_DATE('%w', ActivityDate) = '2' THEN 'Tuesday'
+      WHEN FORMAT_DATE('%w', ActivityDate) = '3' THEN 'Wednesday'
+      WHEN FORMAT_DATE('%w', ActivityDate) = '4' THEN 'Thursday'
+      WHEN FORMAT_DATE('%w', ActivityDate) = '5' THEN 'Friday'
+      WHEN FORMAT_DATE('%w', ActivityDate) = '6' THEN 'Saturday'
+      END
+WHERE `bellabeat-case-study-2-376122.fitbit_data.daily_activity` IS NOT NULL;
+```
+The CDC recommends around 7 hours of sleep.
+- In order to reflect that a column called SleepQuality will be created to show if users are receiving "below recommended", "recommended" and "above recommended" amounts of sleep using this query: 
+```
+SELECT 
+ CAST(Id AS STRING) AS Id,
+ CAST(SleepDay AS DATE) AS SleepDate,
+ ROUND(TotalTimeInBed/60,2) AS HourInBed,
+ ROUND(HourAsleep,2) AS HourAsleep,
+ CASE 
+  WHEN HourAsleep< 6 THEN 'Below Recommended'
+  WHEN HourAsleep BETWEEN 6 AND 8 THEN 'Recommended'
+  ELSE 'Above Recommended'
+ END AS SleepQuality 
+FROM
+ (WITH result AS 
+    (SELECT *,
+      TotalMinutesAsleep/60 AS HourAsleep
+    FROM `bellabeat-case-study-2-376122.fitbit_data.sleep_day`) 
+    SELECT * FROM result)
+```
+These results were then imported into BigQuery under the name sd_query
+- The sd_query table and sleep_day table were then joined by the Id and SleepDay column using this query:
+```
+SELECT
+  *
+FROM
+  `bellabeat-case-study-2-376122.fitbit_data.sd_query`
+JOIN
+  `bellabeat-case-study-2-376122.fitbit_data.sleep_day`
+ON
+  `bellabeat-case-study-2-376122.fitbit_data.sd_query`.Id =    `bellabeat-case-study-2-376122.fitbit_data.sleep_day`.Id
+AND
+  `bellabeat-case-study-2-376122.fitbit_data.sd_query`.SleepDate = `bellabeat-case-study-2-376122.fitbit_data.sleep_day`.SleepDay
+```
+This table was named Joined_sleep and was then joined with the DailyActivity table to give me a more comprehensive and all encompassing table.
+- These tables will also be joined by the Id and Date columns using this query:
+```
+SELECT
+*
+FROM
+  `bellabeat-case-study-2-376122.fitbit_data.daily_activity`
+JOIN
+  `bellabeat-case-study-2-376122.fitbit_data.joined_sleep`
+ON
+  `bellabeat-case-study-2-376122.fitbit_data.daily_activity`.Id =    `bellabeat-case-study-2-376122.fitbit_data.joined_sleep`.Id
+AND
+  `bellabeat-case-study-2-376122.fitbit_data.daily_activity`.ActivityDate = `bellabeat-case-study-2-376122.fitbit_data.joined_sleep`.SleepDate
+```
 ## 4. ANALYZE PHASE
 
 We analyzed the data to identify trends and insights that would inform the company's marketing strategy. We looked at how users are interacting with the product
