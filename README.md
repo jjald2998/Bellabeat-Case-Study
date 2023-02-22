@@ -187,4 +187,33 @@ We analyzed the data to identify trends and insights that would inform the compa
 <img width="1359" alt="Screenshot 2023-02-21 at 10 13 59 PM" src="https://user-images.githubusercontent.com/73331822/220520226-9a348564-4271-4a43-85dd-9811fc65b93b.png">
 This Box and Whiskers plot not only shows the average calories burned for each activity level, it also shows the spread of the total calories burned.
 
-- This plot shows that even though the averages from somewhat active and active are similar, the active section skews much higher than any other activity type.
+- This plot shows that even though the averages from active and very active are similar, the active section skews much higher than any other activity type.
+
+- When analyzing the average hours asleep and in bed for each activity level, I found that on average the more active the user was, the less they slept, and subsequently, stayed in bed.
+
+<img width="1357" alt="Screenshot 2023-02-21 at 10 21 21 PM" src="https://user-images.githubusercontent.com/73331822/220521192-e9ca1899-8517-4533-bda1-12bf216043e9.png">
+
+More time in bed was also found to have a slight negative correlation to the amount of calories that users burned.
+
+<img width="1354" alt="Screenshot 2023-02-21 at 10 24 53 PM" src="https://user-images.githubusercontent.com/73331822/220521587-2312e963-a9d1-4b8f-9842-25517faf3d61.png">
+
+To reinforce this correlation I found that the more hours in bed users had, the less steps they were taking.
+
+<img width="1348" alt="Screenshot 2023-02-21 at 10 39 10 PM" src="https://user-images.githubusercontent.com/73331822/220523516-d74ecda4-2e44-44af-b2e4-2d1cc4b61b20.png">
+
+I also discovered that the more steps users took, the more calories they burned.
+
+<img width="1361" alt="Screenshot 2023-02-21 at 10 40 39 PM" src="https://user-images.githubusercontent.com/73331822/220523656-7fe3adf1-722c-4f41-b20b-2a831ef9d3a8.png">
+
+- Thus it can be concluded that the more time asleep users are, the less steps they are taking, and subsequently, the less calories they are burning.
+
+- I also measured the total amount of calories burned for each day of the week:
+
+<img width="518" alt="Screenshot 2023-02-21 at 10 33 02 PM" src="https://user-images.githubusercontent.com/73331822/220522655-fe00e2c3-e55d-4f1b-bdf0-5c8cfc9b67d9.png">
+
+I found that the days with the least amount of total calories burned were Monday and Sunday.  Perhaps due to Sunday being most people's day of rest, and Monday being the beginning of the traditional work week.
+
+## 5. SHARE PHASE
+
+
+## 6. ACT PHASE
