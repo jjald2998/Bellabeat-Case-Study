@@ -213,7 +213,19 @@ I also discovered that the more steps users took, the more calories they burned.
 
 I found that the days with the least amount of total calories burned were Monday and Sunday.  Perhaps due to Sunday being most people's day of rest, and Monday being the beginning of the traditional work week.
 
+- I also found that even though, people with less sleep reported higher activity levels.  When looking at the different levels of sleep (Below recommended, recommended and above recommended) the users who burned the most amount of calories on average are people who received the recommended amount of sleep.
+
+<img width="805" alt="Screenshot 2023-02-22 at 12 37 25 PM" src="https://user-images.githubusercontent.com/73331822/220725478-e7f7720b-0bb9-4b00-af34-edeace70d495.png">
+
+It may seem that the less sleep users get, the more activity they will have, and thus, the more calories they will burn. But in reality, the quality of their sleep is extremely important to the amount of calories they will burn.
+
 ## 5. SHARE PHASE
 
 
 ## 6. ACT PHASE
+
+Conclusions based on this analysis:
+
+- The data provided was far too small. With a larger amount of users, the findings would be much more concrete and accurate.
+- The biggest finding was that, on average, the more active users were the more calories they would burn.  This could be seen with the box and whiskers plot, as well as the relationship between sleep and steps taken.
+- While it may seem.
