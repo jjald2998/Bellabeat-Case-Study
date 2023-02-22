@@ -72,11 +72,9 @@ FROM
  `bellabeat-case-study-2-376122.fitbit_data.daily_activity`
 ```
 Results:
-- Number_of_users = 33
-- Number_of_records = 940
-- Number_of_dates = 31
+- <img width="418" alt="Screenshot 2023-02-21 at 9 36 54 PM" src="https://user-images.githubusercontent.com/73331822/220516816-73510354-2dd7-48ca-8b72-3ae0c109d153.png">
 
-- Did the same for the sleep day table with this query: 
+Did the same for the sleep day table with this query: 
 ```
 SELECT 
   COUNT(DISTINCT Id) AS Number_of_users,
@@ -86,10 +84,9 @@ FROM
   `bellabeat-case-study-2-376122.fitbit_data.sleep_day`
 ```
 Results:
-- Number_of_users = 24
-- Number_of_records = 413
-- Number_of_dates = 31
-- [1000steps.org](https://www.10000steps.org.au) states that a sedentary lifestyle is less than 5,000 steps per day, low activity is between 5000 and 7499, somewhat active is between 7500 and 9999 steps and active is above 10000.
+- <img width="449" alt="Screenshot 2023-02-21 at 9 51 28 PM" src="https://user-images.githubusercontent.com/73331822/220517352-bc15ae38-6da7-487f-9c6c-877e0eb6dae3.png">
+
+[1000steps.org](https://www.10000steps.org.au) states that a sedentary lifestyle is less than 5,000 steps per day, low activity is between 5000 and 7499, somewhat active is between 7500 and 9999 steps and active is above 10000.
 - In order to reflect this, user activity will be classified into these ranges by creating a new column called ActivityLevel.
 - I will also add the day of the week to analyze the time more extensively.
 - This is the query used to create the column ActivityLevel:
@@ -184,3 +181,10 @@ AND
 ## 4. ANALYZE PHASE
 
 We analyzed the data to identify trends and insights that would inform the company's marketing strategy. We looked at how users are interacting with the product
+- Tableau was used to visualize the findings from my SQL queries.
+- I wanted to emphasize the difference in calories burned for each of the different activity levels.
+
+<img width="1359" alt="Screenshot 2023-02-21 at 10 13 59 PM" src="https://user-images.githubusercontent.com/73331822/220520226-9a348564-4271-4a43-85dd-9811fc65b93b.png">
+This Box and Whiskers plot not only shows the average calories burned for each activity level, it also shows the spread of the total calories burned.
+
+- This plot shows that even though the averages from somewhat active and active are similar, the active section skews much higher than any other activity type.
