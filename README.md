@@ -73,7 +73,7 @@ FROM
  `bellabeat-case-study-2-376122.fitbit_data.daily_activity`
 ```
 Results:
-- <img width="418" alt="Screenshot 2023-02-21 at 9 36 54 PM" src="https://user-images.githubusercontent.com/73331822/220516816-73510354-2dd7-48ca-8b72-3ae0c109d153.png">
+<img width="418" alt="Screenshot 2023-02-21 at 9 36 54 PM" src="https://user-images.githubusercontent.com/73331822/220516816-73510354-2dd7-48ca-8b72-3ae0c109d153.png">
 
 Did the same for the sleep day table with this query: 
 ```
@@ -85,7 +85,7 @@ FROM
   `bellabeat-case-study-2-376122.fitbit_data.sleep_day`
 ```
 Results:
-- <img width="449" alt="Screenshot 2023-02-21 at 9 51 28 PM" src="https://user-images.githubusercontent.com/73331822/220517352-bc15ae38-6da7-487f-9c6c-877e0eb6dae3.png">
+<img width="449" alt="Screenshot 2023-02-21 at 9 51 28 PM" src="https://user-images.githubusercontent.com/73331822/220517352-bc15ae38-6da7-487f-9c6c-877e0eb6dae3.png">
 
 [1000steps.org](https://www.10000steps.org.au) states that a sedentary lifestyle is less than 5,000 steps per day, low activity is between 5000 and 7499, somewhat active is between 7500 and 9999 steps and active is above 10000.
 - In order to reflect this, user activity will be classified into these ranges by creating a new column called ActivityLevel.
