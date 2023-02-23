@@ -8,7 +8,8 @@ This repository contains a data analysis for Bellabeat, where we aim to answer s
 
 # **About the Company**
 
-Bellabeat is a high-tech company that empowers women by giving them the tools necessary to track their health, by recording data like their sleep, activity, stress, and reproductive health. The company was founded in 2013 by Urška Sršen and Sando Mur. Urska's background in art has allowed the company to not compromise on the aesthetics of the products, and their entire line consists of beautiful and diegetic designs that are meant to not only serve their functions as health products but also give off a unique and sleek design philosophy.
+Bellabeat is a high-tech company that empowers women by giving them the tools necessary to track their health, by recording data like their sleep, activity, stress, and reproductive health. The company was founded in 2013 by Urška Sršen and Sando Mur. Urska's background in art has allowed the company to not compromise on the aesthetics of the products, and their entire line consists of beautiful and diegetic designs that are meant to not only serve their functions as health products but also give off a unique and sleek design philosophy. Their main products include their Bellabeat app which work in conjunction with their Leaf(bracelet, neckalce and clip), Time(Smart Watch) and Spring(Water Bottle) products.
+- I will be focusing on improving the customer experience with the Time product in conjunction with the Bellabeat app.
 
 **Scenario of the Study**
 
@@ -228,4 +229,15 @@ Conclusions based on this analysis:
 
 - The data provided was far too small. With a larger amount of users, the findings would be much more concrete and accurate.
 - The biggest finding was that, on average, the more active users were the more calories they would burn.  This could be seen with the box and whiskers plot, as well as the relationship between sleep and steps taken.
-- While it may seem.
+- While it may seem that the less sleep someone receives the more time they would have to burn calories.  But in reality, both too much and not enough sleep reflected less calories burned when compared to receiving the recommended amount of sleep.
+- What should be focused on, is making sure users are more active, while also reinforcing helthy sleeping habits.
+- In conclusion, an effective way to incentivize these healthier practices is to remind the users to stay active throughout the day, or whenever the watch detects a lack of activity for a certain amount of time. (See Apple Watch movement reminders for an example).
+- This could also be paired with a bedtime feature that will kindly remind you of when to go to bed in order to receive the recommended amount of sleep.
+- Another useful feature that has been seen in the Apple Watch, is the ability to use the watch as an alarm by lightly vibrating on the users wrist.  This would be a more effective, and less jarring way of waking a user so that they do not oversleep.
+- All of these features could be coupled with rewards in order to encourage users to keep their healthier habits up. Such as a virtual badge, which can be seen with the Apple watch. But since the product does not have a virtual interface, these rewards could be seen directly in the application.
+
+
+![CBmULikW4AAz-nK](https://user-images.githubusercontent.com/73331822/221049227-e47738a2-40ed-4c18-b414-b568b2ba614d.jpg)
+
+- A more effective incentive for users would be a discount of free membership to their bellabeat app that accompanies their smart devices.  Since it is necessary to use any bellabeat product effectively.
+
