@@ -222,6 +222,9 @@ It may seem that the less sleep users get, the more activity they will have, and
 
 ## 5. SHARE PHASE
 
+[bellabeat_powerpoint.pptx](https://github.com/jjald2998/Bellabeat-Case-Study/files/10901770/bellabeat_powerpoint.pptx)
+<img width="1511" alt="Screenshot 2023-03-06 at 12 39 23 PM" src="https://user-images.githubusercontent.com/73331822/223201082-12ad9bda-e8f2-4ff8-8197-3ae1b5c825bc.png">
+
 
 ## 6. ACT PHASE
 
